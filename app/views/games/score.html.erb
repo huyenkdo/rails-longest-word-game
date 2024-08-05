@@ -14,6 +14,7 @@
       <p class="my-4 fs-5">Sorry but <strong><%= @attempt %></strong> does not seem to be a valid English word...</p>
     <% else %>
       <p class="my-4 fs-5">Congratulations! <%= @attempt %> is a valid English word!</p>
+      <p class="mb-4 fs-7 fw-light">Your score is: <%= session[:score] %></p>
     <% end %>
     <a href="/new" class="btn btn-outline-secondary">Play again</a>
   </div>

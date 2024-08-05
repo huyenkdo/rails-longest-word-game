@@ -26,5 +26,6 @@ class GamesController < ApplicationController
       word = JSON.parse(word_serialized)
       word['found'] == true
     end
+    session[:score] += @attempt.length
   end
 end
