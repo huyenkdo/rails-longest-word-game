@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Result</h1>
+    <% if !@contains_letters_from_grid.call || @letters_overused.call %>
+      <p class="my-4 fs-5">Sorry but <strong><%= @attempt %></strong> can't be built out of <%= @letters.delete(" ").chars.join(',') %></p>
+    <% elsif @contains_letters_from_grid.call && !@letters_overused.call && !@english_word.call %>
+      <p class="my-4 fs-5">Sorry but <strong><%= @attempt %></strong> does not seem to be a valid English word...</p>
+    <% else %>
+      <p class="my-4 fs-5">Congratulations! <%= @attempt %> is a valid English word!</p>
+    <% end %>
+    <a href="/new" class="btn btn-outline-secondary">Play again</a>
+  </div>
+</body>
+</html>
